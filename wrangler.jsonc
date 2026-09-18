@@ -18,7 +18,7 @@
     {
       "binding": "DB",
       "database_name": "migsim-db",
-      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+      "database_id": "2174bc8f-c35b-4c03-846a-52a9972fad69"
     }
   ],
   "observability": {
