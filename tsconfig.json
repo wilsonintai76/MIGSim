@@ -4,7 +4,7 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "module": "ESNext",
-    "types": ["vite/client", "vite-plugin-pwa/client"],
+    "types": ["vite/client", "vite-plugin-pwa/client", "node", "@cloudflare/workers-types"],
     "lib": [
       "ES2022",
       "DOM",
@@ -23,5 +23,6 @@
     },
     "allowImportingTsExtensions": true,
     "noEmit": true
-  }
+  },
+  "include": ["src", "shared", "vite.config.ts"]
 }

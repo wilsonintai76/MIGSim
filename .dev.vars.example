@@ -1,0 +1,12 @@
+# Copy to .dev.vars (git-ignored) for `wrangler dev`.
+# In production, set JWT_SECRET with `wrangler secret put JWT_SECRET`.
+
+JWT_SECRET="replace-with-a-long-random-string"
+ENVIRONMENT="development"
+
+# Optional: any Workers AI text-generation model that supports JSON mode.
+# AI_MODEL="@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+
+# Optional: extra browser origins allowed to send credentialed requests.
+# Localhost dev origins are allowed automatically unless ENVIRONMENT=production.
+# CORS_ORIGINS="https://migsim.example.edu"

@@ -42,6 +42,17 @@ export default defineConfig(() => {
           enabled: true,
           type: 'module',
         },
+        workbox: {
+          // The API is never served from cache, and an /api/* navigation must reach
+          // the Worker rather than fall back to index.html.
+          navigateFallbackDenylist: [/^\/api\//],
+          runtimeCaching: [
+            {
+              urlPattern: /^\/api\//,
+              handler: 'NetworkOnly',
+            },
+          ],
+        },
       }),
     ],
     resolve: {
@@ -52,6 +63,14 @@ export default defineConfig(() => {
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
+      // The SPA calls same-origin `/api/*`; in dev that is proxied to `wrangler dev`
+      // (`npm run dev:api`) so cookies stay first-party.
+      proxy: {
+        '/api': {
+          target: process.env.API_ORIGIN ?? 'http://127.0.0.1:8787',
+          changeOrigin: true,
+        },
+      },
     },
   };
 });

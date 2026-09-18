@@ -37,11 +37,19 @@ export const PassHistoryModal: React.FC<PassHistoryModalProps> = ({
     setSyncMessage(null);
     const res = await storageService.syncPendingToD1();
     setIsSyncing(false);
-    setSyncMessage(
-      res.errors === 0
-        ? `Synced ${res.syncedCount} passes to Cloudflare D1.`
-        : `Synced ${res.syncedCount} passes (${res.errors} offline queued).`
-    );
+
+    if (res.pendingAuth) {
+      setSyncMessage('Sign in to sync your passes — they are queued safely on this device.');
+    } else if (res.errors > 0) {
+      setSyncMessage(
+        `Synced ${res.syncedCount} passes (${res.errors} still queued offline).`
+      );
+    } else if (res.rejected > 0) {
+      setSyncMessage(`Synced ${res.syncedCount} passes (${res.rejected} refused by the server).`);
+    } else {
+      setSyncMessage(`Synced ${res.syncedCount} passes to Cloudflare D1.`);
+    }
+
     onRefresh();
     setTimeout(() => setSyncMessage(null), 4000);
   };
