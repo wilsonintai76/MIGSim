@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="torchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="nozzleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+    <radialGradient id="arcGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#67e8f9" stop-opacity="1" />
+      <stop offset="40%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#f59e0b" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="sparkGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background with safe zone -->
+  <rect width="512" height="512" rx="96" fill="url(#bgGrad)" />
+
+  <!-- Shielded Seam Ground Plate -->
+  <path d="M 64 390 L 448 390 L 448 420 L 64 420 Z" fill="#334155" stroke="#475569" stroke-width="3" />
+  <line x1="64" y1="390" x2="448" y2="390" stroke="#f59e0b" stroke-width="4" stroke-dasharray="12,6" opacity="0.6"/>
+
+  <!-- Torch Handle -->
+  <path d="M 120 110 L 220 210 L 190 240 L 90 140 Z" fill="url(#torchGrad)" rx="8" />
+  <!-- Torch Neck -->
+  <path d="M 210 200 L 290 280 L 270 300 L 190 220 Z" fill="#64748b" />
+  <!-- Gas Nozzle & Contact Tip -->
+  <path d="M 285 275 L 340 330 L 320 350 L 265 295 Z" fill="url(#nozzleGrad)" />
+  <line x1="330" y1="340" x2="355" y2="365" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" />
+
+  <!-- Arc Flash Glow -->
+  <circle cx="360" cy="370" r="70" fill="url(#arcGlow)" />
+  <circle cx="360" cy="370" r="16" fill="#ffffff" />
+
+  <!-- Sparks -->
+  <circle cx="390" cy="340" r="4" fill="url(#sparkGrad)" />
+  <circle cx="410" cy="365" r="3" fill="url(#sparkGrad)" />
+  <circle cx="340" cy="320" r="3.5" fill="url(#sparkGrad)" />
+  <circle cx="380" cy="400" r="4" fill="#fbbf24" />
+  <circle cx="320" cy="390" r="3" fill="#fbbf24" />
+  <circle cx="425" cy="335" r="2.5" fill="#ffffff" />
+
+  <!-- Tag / BLE Icon badge -->
+  <rect x="350" y="80" width="90" height="90" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="3" />
+  <rect x="365" y="95" width="25" height="25" fill="#38bdf8" />
+  <rect x="400" y="95" width="25" height="25" fill="#ffffff" />
+  <rect x="365" y="130" width="25" height="25" fill="#ffffff" />
+  <rect x="400" y="130" width="25" height="25" fill="#38bdf8" />
+</svg>

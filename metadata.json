@@ -1,0 +1,7 @@
+{
+  "name": "GMAW MIG Welding Simulator",
+  "description": "Progressive Web App for GMAW/MIG welding technique and parameter training with camera-based torch tracking, BLE sensor telemetry, and empirical bead quality modeling.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
